@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/KalanaKD/jenkins-monorepo-test.git'
+                echo 'Code already checked out by Jenkins via SCM.'
             }
         }
         stage('Install') {
