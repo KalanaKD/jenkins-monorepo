@@ -10,6 +10,9 @@ pipeline {
                 description: 'Which package to build and publish'
         )
     }
+    environment {
+        VERDACCIO_TOKEN = credentials('verdaccio-test-token')
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -25,11 +28,8 @@ pipeline {
             steps {
                 sh '''
                     echo "@monorepo-test:registry=http://172.17.0.1:4873/" > .npmrc
-                    npm config set //172.17.0.1:4873/:_authToken=MjFmNTVkMzcyNzFhZjJjNjAzN2Q2ZGUwZTEwMDE5ODk6Y2ZlZDAxZmY4OGM4MGUzY2ZjOTU2YQ==" 2>/dev/null || echo "")
+                    echo "//172.17.0.1:4873/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc
                 '''
-                // simplest reliable option: paste the token line from your local
-                // ~/.npmrc (written by `npm adduser` above) as a Jenkins Secret
-                // Text credential, same pattern as the real Nexus token
             }
         }
         stage('Build') {
