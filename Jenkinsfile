@@ -5,9 +5,9 @@ pipeline {
     }
     parameters {
         choice(
-                name: 'PACKAGE',
-                choices: ['lib-a', 'lib-b', 'lib-c'],
-                description: 'Which package to build and publish'
+            name: 'PACKAGE',
+            choices: ['lib-a', 'lib-b', 'lib-c'],
+            description: 'Which package to build and publish'
         )
     }
     environment {
