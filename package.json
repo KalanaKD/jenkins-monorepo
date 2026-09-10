@@ -1,0 +1,12 @@
+{
+  "name": "jenkins-monorepo-test",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:lib-a": "npm --workspace packages/lib-a run build",
+    "build:lib-b": "npm --workspace packages/lib-b run build",
+    "build:lib-c": "npm --workspace packages/lib-c run build"
+  }
+}
