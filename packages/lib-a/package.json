@@ -1,6 +1,6 @@
 {
   "name": "@monorepo-test/lib-a",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "scripts": {
     "build": "node -e \"require('fs').cpSync('src','dist',{recursive:true})\""
