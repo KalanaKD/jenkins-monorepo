@@ -5,7 +5,7 @@ function getName() {
 function getDummyData() {
   return {
     message: 'Hello from lib-a',
-    version: '1.0.3',
+    version: '1.0.4',
     buildTest: true
   };
 }
